@@ -1,0 +1,14 @@
+{
+  "name": "un-passo-alla-volta",
+  "private": true,
+  "description": "Assistente per la richiesta di rimborso sanitario, pensato per una persona con bassa visione",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "latest"
+  }
+}

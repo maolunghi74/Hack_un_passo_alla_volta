@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un passo alla volta · Presentazione</title>
+<style>
+:root{--purple:#A100FF;--purple-2:#7500C0;--purple-3:#460073;--lilac:#BE82FF;--lilac-2:#DCAFFF;--black:#000;--ink:#FFFFFF;--mute:#B3B3B3;--card:#0D0D0D;--line:#2A2A2A;--ok:#5CE1A0;--stop:#FF6B6B}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#000;overflow:hidden}
+body{font-family:Graphik,"Helvetica Neue",Arial,sans-serif;color:var(--ink)}
+#stage{position:absolute;left:50%;top:50%;width:1280px;height:720px;transform-origin:0 0}
+.slide{position:absolute;inset:0;padding:64px 80px 56px;display:none;background:#000}
+.slide.on{display:block}
+.eyebrow{color:var(--lilac);font-size:15px;letter-spacing:5px;text-transform:uppercase;font-weight:500;margin:0 0 14px}
+h1{font-size:52px;line-height:1.08;margin:0 0 22px;font-weight:600;letter-spacing:-.5px;max-width:1040px}
+h2{font-size:22px;margin:0 0 10px;font-weight:600}
+p,li{font-size:20px;line-height:1.5;color:#E6E6E6}
+.lead{font-size:24px;line-height:1.45;color:var(--mute);max-width:980px;margin:0 0 28px}
+.gt{color:var(--purple);font-weight:700}
+.grid{display:grid;gap:24px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px}
+.tight{gap:18px}.tight .card{padding:18px 22px}
+.card.hl{border:1px solid var(--purple-2);background:#0F0716}
+.card p{margin:0;font-size:18px}
+.card h2{font-size:20px}
+ul.chev{list-style:none;padding:0;margin:0}
+ul.chev li{position:relative;padding-left:28px;margin:0 0 12px;font-size:19px}
+ul.chev li::before{content:">";position:absolute;left:0;color:var(--purple);font-weight:700}
+.foot{position:absolute;left:80px;right:80px;bottom:26px;display:flex;justify-content:space-between;font-size:13px;color:#7A7A7A}
+.tag{display:inline-block;font-size:13px;font-weight:600;padding:4px 11px;border-radius:999px;margin:0 6px 8px 0}
+.t-ai{background:#2B0A45;color:var(--lilac-2)}.t-rule{background:#1E1E1E;color:#D0D0D0;border:1px solid #3A3A3A}.t-rob{background:#0B2E1E;color:var(--ok)}.t-stop{background:#3A0F0F;color:#FFB3B3}
+.big{font-size:84px;font-weight:600;line-height:1;letter-spacing:-2px}
+.mute{color:var(--mute)}
+/* cover */
+.cover h1{font-size:88px;margin-bottom:28px}
+.cover .lead{font-size:28px;max-width:740px}
+.cover .meta{position:absolute;left:80px;bottom:64px;font-size:17px;color:var(--mute);line-height:1.7}
+.cover .mark{position:absolute;right:80px;top:120px;font-size:420px;line-height:.8;color:var(--purple);font-weight:300}
+/* journey */
+.journey{display:flex;align-items:stretch;gap:14px;margin-top:10px}
+.jstep{flex:1;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px;position:relative}
+.jstep .n{font-size:14px;color:var(--mute);margin-bottom:8px}
+.jstep p{margin:0;font-size:17px;line-height:1.4}
+.jstep.block{border-color:#7A2A2A;background:#160909}
+.jstep.block .n{color:#FF9C9C}
+.jstep.end{border-color:var(--stop);background:#2A0B0B}
+.arrow{align-self:center;color:var(--purple);font-size:26px;font-weight:700}
+/* table */
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line);font-size:17px;line-height:1.4}
+th{color:var(--lilac);font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+td.o{color:var(--mute)}
+/* agent diagram */
+.lane{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;margin-bottom:14px}
+.lane .lab{font-size:15px;color:var(--mute)}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{border-radius:12px;padding:12px 14px;font-size:16px;line-height:1.3;min-width:150px}
+.c-ai{background:#1C0730;border:1px solid var(--purple-2);color:#F1E3FF}
+.c-rule{background:#141414;border:1px solid #3A3A3A;color:#E0E0E0}
+.c-rob{background:#08241A;border:1px solid #1E7A52;color:#C9F7E0}
+.chip small{display:block;font-size:13px;opacity:.75;margin-top:3px}
+code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.9em;color:var(--lilac-2)}
+pre.tree{font-family:"SFMono-Regular",Consolas,monospace;font-size:17px;line-height:1.6;color:#D9D9D9;margin:0;background:#0A0410;border:1px solid var(--purple-3);border-radius:16px;padding:22px 26px}
+pre.tree b{color:var(--lilac);font-weight:500}
+/* ui */
+#hud{position:fixed;right:18px;top:12px;font-size:13px;color:#6E6E6E;font-family:Arial,sans-serif;z-index:5}
+#bar{position:fixed;left:0;bottom:0;height:3px;background:var(--purple);transition:width .25s}
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:34vh;overflow:auto;background:#111;border-top:1px solid #333;color:#DDD;font:15px/1.5 Arial,sans-serif;padding:14px 22px;display:none;z-index:6}
+#notes.on{display:block}
+.notes{display:none}
+@media print{
+  html,body{overflow:visible;height:auto}
+  #stage{position:static;transform:none!important;width:auto;height:auto}
+  .slide{display:block!important;position:relative;width:1280px;height:720px;page-break-after:always}
+  #hud,#bar,#notes{display:none!important}
+  @page{size:1280px 720px;margin:0}
+}
+</style>
+</head>
+<body>
+<div id="stage">
+
+<!-- 1 -->
+<section class="slide cover">
+  <div class="mark" aria-hidden="true">&gt;</div>
+  <p class="eyebrow">Tema 01 · Accessibilità digitale</p>
+  <h1>Un passo<br>alla volta</h1>
+  <p class="lead">Un assistente che accompagna una persona con bassa visione fino all'invio della sua richiesta di rimborso sanitario.</p>
+  <div class="meta">Team: Iana Stamati e Mauro Lunghi<br>Servizio di riferimento: richiesta di rimborso nell'area assicurati UniSalute (ricostruzione dimostrativa)</div>
+  <div class="notes">Apertura: non abbiamo costruito un checker o un restyling. Abbiamo costruito uno strumento che Roberto usa da solo, sul suo telefono, per portare a termine una pratica che oggi abbandona.</div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <p class="eyebrow">01 · Persona e barriera</p>
+  <h1>Roberto ha diritto a un rimborso che non riesce a chiedere</h1>
+  <div class="grid g2" style="grid-template-columns:1.1fr 1fr">
+    <div class="card hl">
+      <h2>Chi è</h2>
+      <ul class="chev">
+        <li>63 anni, ex magazziniere, assicurato tramite il fondo sanitario della sua ex azienda</li>
+        <li>Retinopatia diabetica: la visione centrale è frammentata, con zone sfocate</li>
+        <li>Usa lo zoom del telefono al 300%. Non usa lo screen reader: l'ha provato e lo trova troppo veloce</li>
+        <li>Per ogni pratica online oggi deve chiedere alla figlia</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:20px">
+        <h2>Cosa sta cercando di fare</h2>
+        <p>Chiedere a UniSalute il rimborso di una visita oculistica privata, fatta su prescrizione del suo medico.</p>
+      </div>
+      <div class="card"><p class="mute" style="font-size:15px;margin-bottom:6px">Spesa sostenuta</p><div class="big">122 €</div>
+        <p class="mute" style="font-size:15px;margin-top:8px">120 € di visita + 2 € di imposta di bollo, fattura del 12 settembre 2026</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Persona costruita dal team su un caso realistico</span><span>Un passo alla volta</span></div>
+  <div class="notes">Roberto è un profilo preciso, non "un utente con disabilità visiva". Il dettaglio che conta: usa lo zoom al 300% e non lo screen reader. È questo che rompe il modulo.</div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <p class="eyebrow">01 · Dove si ferma</p>
+  <h1>Tre punti di rottura, e il terzo è quello in cui chiude l'app</h1>
+  <div class="journey">
+    <div class="jstep"><div class="n">Inizio</div><p>Apre il modulo "Richiesta di rimborso" con lo zoom al 300%</p></div>
+    <div class="arrow">&gt;</div>
+    <div class="jstep block"><div class="n">Rottura 1</div><p>Il modulo è su due colonne: vede metà delle etichette e non sa a quale campo appartiene il riquadro che tocca</p></div>
+    <div class="arrow">&gt;</div>
+    <div class="jstep block"><div class="n">Rottura 2</div><p>"Tipologia prestazione": 40 voci con codici. Sceglie la prima in cui legge "oculistica"</p></div>
+    <div class="arrow">&gt;</div>
+    <div class="jstep end"><div class="n">Rottura 3 · si ferma qui</div><p>Preme Invia. Due errori compaiono in cima alla pagina, fuori dalla sua vista. Riprova tre volte, poi chiude</p></div>
+  </div>
+  <div class="grid g2" style="margin-top:30px">
+    <div class="card"><p><span class="tag t-stop">Errore 1</span> "Documentazione incompleta: allegare prescrizione in corso di validità." Il campo prescrizione non ha l'asterisco: sembrava facoltativo.</p></div>
+    <div class="card"><p><span class="tag t-stop">Errore 2</span> Manca la conferma alla dichiarazione finale: una casella di pochi pixel sotto un testo di tre righe.</p></div>
+  </div>
+  <div class="foot"><span>In demo: scheda "Prima", pulsante "Riproduci il tentativo di Roberto"</span><span>Un passo alla volta</span></div>
+  <div class="notes">Il momento esatto dello stop è il terzo: non perché l'errore sia difficile, ma perché per Roberto non esiste. È stampato dove lui non sta guardando.</div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <p class="eyebrow">02 · Percorso assistito</p>
+  <h1 style="font-size:46px">Sei domande, una per schermata, anche a voce</h1>
+  <div class="grid g3 tight">
+    <div class="card"><span class="tag t-rob">Roberto</span><span class="tag t-ai">AI</span><h2>1 · La fattura</h2><p>Fotografa la fattura. L'AI trascrive i dati; il codice compone la frase con importi e date. Roberto conferma.</p></div>
+    <div class="card"><span class="tag t-ai">AI</span><span class="tag t-rob">Roberto</span><h2>2 · Il tipo di spesa</h2><p>L'AI propone 1 voce su 40 in parole semplici, con la voce ufficiale sotto. Se dice no: scelta guidata in 3 domande, senza AI.</p></div>
+    <div class="card"><span class="tag t-rule">Regola</span><span class="tag t-ai">AI</span><h2>3 · La prescrizione</h2><p>Il controllo che il portale faceva dopo l'invio si sposta prima. L'AI legge il foglio, una regola fissa controlla la data.</p></div>
+    <div class="card"><span class="tag t-rob">Roberto</span><h2>4 · Il conto</h2><p>"Il conto finisce con 4521: è ancora il tuo?" Se è cambiato, lo strumento si ferma e lo dice.</p></div>
+    <div class="card"><span class="tag t-rob">Roberto</span><h2>5 · La dichiarazione</h2><p>Tre righe di testo legale diventano due frasi. Il testo ufficiale resta visibile e si può ascoltare.</p></div>
+    <div class="card hl"><span class="tag t-rule">Portale</span><h2>6 · Riepilogo e invio</h2><p>Stessa validazione del portale. Se c'è un errore, compare nella schermata che Roberto sta guardando, tradotto.</p></div>
+  </div>
+  <div class="foot"><span>Testo minimo 24px, pulsanti alti 72px, nessuno scorrimento orizzontale, voce italiana lenta</span><span>Un passo alla volta</span></div>
+  <div class="notes">Sottolineare: non abbiamo tolto campi al modulo. Sono tutti compilati, nell'ordine in cui Roberto ragiona, uno alla volta.</div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <p class="eyebrow">02 · Prima e dopo</p>
+  <h1>Stesso modulo, stessa persona, esito diverso</h1>
+  <div class="grid g2">
+    <div class="card" style="border-color:#5A2020">
+      <h2 style="color:#FF9C9C">Prima: il portale</h2>
+      <ul class="chev">
+        <li>Errori stampati fuori dalla zona che vede</li>
+        <li>Tre tentativi di invio, nessuna reazione percepita</li>
+        <li>Prescrizione non allegata perché sembrava facoltativa</li>
+        <li><strong>Esito: richiesta non inviata.</strong> Serve la figlia</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color:#1E7A52">
+      <h2 style="color:var(--ok)">Dopo: con l'assistente</h2>
+      <ul class="chev">
+        <li>Sei domande, ognuna letta ad alta voce</li>
+        <li>La prescrizione mancante viene chiesta prima dell'invio</li>
+        <li>Ogni dato letto dall'AI è confermato da Roberto</li>
+        <li><strong>Esito: richiesta inviata, numero di pratica.</strong> Da solo</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top:24px"><p>Alla fine della demo l'assistente compila <strong>lo stesso modulo</strong> della scheda "Prima" e lo invia con la stessa validazione: si può tornare sul portale e vedere ogni campo compilato.</p></div>
+  <div class="foot"><span>Tempo di completamento: da misurare nella prova con utente</span><span>Un passo alla volta</span></div>
+  <div class="notes">Non dichiarare tempi che non abbiamo misurato. Se il tempo lo abbiamo cronometrato in prova, inserirlo qui.</div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <p class="eyebrow">02 · La demo</p>
+  <h1>Come la mostriamo, in cinque minuti</h1>
+  <div class="grid g2" style="grid-template-columns:1.2fr 1fr">
+    <div class="card">
+      <ul class="chev">
+        <li><strong>Attiviamo "Simula la sua vista"</strong>: la giuria vede quello che vede Roberto</li>
+        <li><strong>Scheda Prima</strong>: riproduciamo il tentativo. L'errore compare, nessuno lo vede</li>
+        <li><strong>Scheda Dopo</strong>: percorso completo con fattura e prescrizione fittizie</li>
+        <li><strong>Variante</strong>: "Non ce l'ho adesso". Nessun errore, Roberto sa cosa fare</li>
+        <li><strong>Registro a destra</strong>: per ogni passo, chi ha agito e cosa ha restituito l'AI</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card hl" style="margin-bottom:20px"><h2>Se la rete non collabora</h2><p>La demo usa risposte preparate nello stesso formato degli agenti. Lo schermo lo dichiara con un'etichetta: non fingiamo che l'AI stia lavorando.</p></div>
+      <div class="card"><h2>Anche sul telefono vero</h2><p>Aperta da smartphone, l'app occupa tutto lo schermo e funziona con la fotocamera.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>app/index.html · con l'AI: npm start, tramite Claude Agent SDK e la licenza Claude Code</span><span>Un passo alla volta</span></div>
+  <div class="notes">Ordine consigliato: vista simulata ON, Prima, Dopo completo, variante senza prescrizione, apertura di un dettaglio nel registro.</div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <p class="eyebrow">03 · Autonomia</p>
+  <h1>Da "devo chiedere a mia figlia" a "lo faccio da solo"</h1>
+  <div class="grid g3">
+    <div class="card"><p class="mute" style="font-size:15px">Prima</p><h2 style="font-size:26px;margin-top:6px">Dipende da altri</h2><p>Ogni richiesta di rimborso richiede una persona accanto. Se non c'è, la pratica aspetta o si perde.</p></div>
+    <div class="card hl"><p class="mute" style="font-size:15px">Adesso</p><h2 style="font-size:26px;margin-top:6px">Autonomo nei casi standard</h2><p>Visite ed esami con fattura e prescrizione: dalla foto all'invio, senza aiuto. È un'operazione che ripete più volte l'anno.</p></div>
+    <div class="card"><p class="mute" style="font-size:15px">Resta da fare con aiuto</p><h2 style="font-size:26px;margin-top:6px">Casi fuori perimetro</h2><p>Cambio del conto, ricoveri, cure dentarie a più sedute. Lo strumento li riconosce e lo dice, invece di provarci.</p></div>
+  </div>
+  <div class="card" style="margin-top:24px"><p>Il guadagno non è solo arrivare in fondo: è sapere <strong>perché</strong> ci si ferma quando ci si ferma. Nella variante senza prescrizione Roberto non subisce un errore: sa cosa manca e a chi chiederlo.</p></div>
+  <div class="foot"><span>Un passo alla volta</span><span></span></div>
+  <div class="notes">L'autonomia ricorrente è il punto: non un aiuto una tantum, ma una capacità che Roberto riusa a ogni visita.</div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <p class="eyebrow">03 · Semplificare senza tradire</p>
+  <h1>Cosa abbiamo semplificato, e cosa resta intatto</h1>
+  <table>
+    <thead><tr><th style="width:30%">Originale</th><th style="width:34%">Cosa sente Roberto</th><th>Cosa garantisce il senso</th></tr></thead>
+    <tbody>
+      <tr><td class="o">Visita specialistica – branca oculistica – regime privato</td><td>Visita dall'oculista, hai pagato tutto tu</td><td>La voce ufficiale è sempre scritta sotto</td></tr>
+      <tr><td class="o">Documentazione incompleta: allegare prescrizione in corso di validità</td><td>Manca il foglio del medico che ti ha prescritto la visita</td><td>Il messaggio originale resta visibile sotto la traduzione</td></tr>
+      <tr><td class="o">Totale documento € 122,00</td><td>122 euro: 120 per la visita, 2 di bollo</td><td>Numeri solo dai dati confermati, formattati dal codice, mai dall'AI</td></tr>
+      <tr><td class="o">Dichiarazione di conformità e trattamento dei dati</td><td>Due frasi: le foto sono vere; il fondo usa i tuoi dati per la pratica</td><td>Il testo ufficiale si legge e si ascolta</td></tr>
+    </tbody>
+  </table>
+  <div class="foot"><span>Regole nella skill agents/build/skills/semplificare-senza-tradire</span><span>Un passo alla volta</span></div>
+  <div class="notes">Mai scritto "ti rimborseranno": il prototipo non conosce il piano di Roberto. Diciamo "il fondo decide quanto rimborsare secondo il tuo piano".</div>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <p class="eyebrow">03 · Limiti</p>
+  <h1>Cosa lo strumento non fa, e lo dichiara</h1>
+  <div class="grid g2">
+    <div class="card">
+      <h2>Limiti del prodotto</h2>
+      <ul class="chev">
+        <li>Non sa se una spesa è coperta dal piano: lo decide il fondo</li>
+        <li>Foto sfocate o al buio vanno rifatte, anche più volte</li>
+        <li>Ricoveri, cure dentarie a più sedute e cambio del conto restano fuori</li>
+        <li>I dati restano solo finché la pagina è aperta</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Limiti del prototipo</h2>
+      <ul class="chev">
+        <li>Il portale è una ricostruzione: non è integrato con i sistemi UniSalute</li>
+        <li>Catalogo delle voci e regola sulla prescrizione sono dimostrativi, da sostituire con quelli del piano</li>
+        <li>Roberto è una persona costruita: il percorso va provato con utenti reali con bassa visione</li>
+        <li>La sintesi vocale dipende dalle voci italiane installate sul telefono</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Un passo alla volta</span><span></span></div>
+  <div class="notes">Dire i limiti con lo stesso tono dei risultati. È parte della credibilità della soluzione.</div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <p class="eyebrow">Struttura agentica</p>
+  <h1>Quattro agenti con un compito stretto, e sempre un piano B</h1>
+  <div class="lane"><div class="lab">Nel prodotto</div><div class="chips">
+    <div class="chip c-ai">Lettore fattura<small>trascrive, non interpreta</small></div>
+    <div class="chip c-ai">Classificatore<small>propone 1 voce su 40</small></div>
+    <div class="chip c-ai">Verificatore prescrizione<small>legge, non decide la validità</small></div>
+    <div class="chip c-ai">Traduttore errori<small>solo per errori non previsti</small></div>
+  </div></div>
+  <div class="lane"><div class="lab">Regole fisse</div><div class="chips">
+    <div class="chip c-rule">Formato di date e importi</div><div class="chip c-rule">Codice nel catalogo</div><div class="chip c-rule">Data prescrizione ≤ visita</div><div class="chip c-rule">Validazione del portale</div>
+  </div></div>
+  <div class="lane"><div class="lab">Decide Roberto</div><div class="chips">
+    <div class="chip c-rob">Conferma i dati letti</div><div class="chip c-rob">Accetta o cambia la voce</div><div class="chip c-rob">Conferma conto e dichiarazione</div><div class="chip c-rob">Invia</div>
+  </div></div>
+  <div class="lane" style="margin-top:22px"><div class="lab">Nella costruzione</div><div class="chips">
+    <div class="chip c-rule"><code>CLAUDE.md</code><small>regole di prodotto per l'agente di coding</small></div>
+    <div class="chip c-rule"><code>/prova-percorso</code><small>percorre l'app come Roberto</small></div>
+    <div class="chip c-rule"><code>/verifica-fedelta</code><small>confronta semplice e originale</small></div>
+    <div class="chip c-rule"><code>sync_prompts.py</code><small>i prompt vivono in agents/</small></div>
+  </div></div>
+  <div class="foot"><span>agents/workflow.md · agents/runtime · agents/build</span><span>Un passo alla volta</span></div>
+  <div class="notes">I prompt che mostriamo sono gli stessi che girano: lo script li copia da agents/runtime dentro l'app.</div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <p class="eyebrow">AI e revisione umana</p>
+  <h1>L'AI propone, Roberto decide, il team controlla</h1>
+  <div class="grid g3">
+    <div class="card"><h2>Dove contribuisce l'AI</h2><ul class="chev"><li>Legge foto di fattura e prescrizione</li><li>Propone la voce del modulo</li><li>Traduce errori non previsti</li><li>Ha scritto con noi codice, testi e prompt</li></ul></div>
+    <div class="card hl"><h2>Cosa non le lasciamo fare</h2><ul class="chev"><li>Scrivere frasi con importi o date</li><li>Scegliere al posto di Roberto</li><li>Decidere se un documento è valido</li><li>Promettere un rimborso</li></ul></div>
+    <div class="card"><h2>Dove serve una persona</h2><ul class="chev"><li>Prova a zoom 300% su telefono reale</li><li>Lettura riga per riga dei prompt</li><li>Fedeltà di ogni testo semplificato</li><li>Regole del piano sanitario</li></ul></div>
+  </div>
+  <div class="foot"><span>Registro firmato in agents/revisione-umana.md</span><span>Un passo alla volta</span></div>
+  <div class="notes">Ogni voce del registro di revisione ha un nome e un esito. Quelle non fatte restano vuote.</div>
+</section>
+
+<!-- 12 -->
+<section class="slide cover">
+  <div class="mark" aria-hidden="true">&gt;</div>
+  <p class="eyebrow">In sintesi</p>
+  <h1 style="font-size:72px">Roberto arriva<br>fino in fondo,<br>da solo</h1>
+  <pre class="tree" style="position:absolute;left:80px;bottom:64px;width:620px">/
+├── <b>app/</b>            percorso assistito + portale "prima"
+├── <b>agents/</b>         4 agenti, comandi, skill, workflow
+├── <b>presentation/</b>   questa presentazione
+└── README.md</pre>
+  <div class="notes">Chiusura sulla persona, non sulla tecnologia.</div>
+</section>
+
+</div>
+<div id="bar"></div><div id="hud"></div><div id="notes"></div>
+<script>
+const slides=[...document.querySelectorAll(".slide")];let i=0;
+const stage=document.getElementById("stage"),hud=document.getElementById("hud"),bar=document.getElementById("bar"),notes=document.getElementById("notes");
+function fit(){const s=Math.min(innerWidth/1280,innerHeight/720);stage.style.transformOrigin="center";stage.style.transform=`translate(-50%,-50%) scale(${s})`}
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle("on",k===i));hud.textContent=`${i+1} / ${slides.length}  ·  frecce per navigare, N per le note`;bar.style.width=((i+1)/slides.length*100)+"%";const nt=slides[i].querySelector(".notes");notes.textContent=nt?nt.textContent:"";location.hash=i+1}
+addEventListener("keydown",e=>{if(["ArrowRight","PageDown"," "].includes(e.key)){e.preventDefault();show(i+1)}if(["ArrowLeft","PageUp"].includes(e.key))show(i-1);if(e.key==="Home")show(0);if(e.key==="End")show(slides.length-1);if(e.key.toLowerCase()==="n")notes.classList.toggle("on")});
+addEventListener("click",e=>{if(e.target.closest("#notes"))return;show(e.clientX>innerWidth/3?i+1:i-1)});
+addEventListener("resize",fit);fit();show((parseInt(location.hash.slice(1))||1)-1);
+</script>
+</body>
+</html>

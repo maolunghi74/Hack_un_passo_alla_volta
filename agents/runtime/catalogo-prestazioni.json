@@ -1,0 +1,365 @@
+{
+ "_nota": "Catalogo dimostrativo ricostruito per il prototipo. Non è il catalogo ufficiale UniSalute: va sostituito con quello reale del piano sanitario. 'richiede_prescrizione' è una regola del portale dimostrativo.",
+ "voci": [
+  {
+   "codice": "SPE-CAR-PRI",
+   "etichetta": "Visita specialistica – branca cardiologica – regime privato",
+   "gruppo": "visita",
+   "branca": "CAR",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal cardiologo (il medico del cuore), hai pagato tutto tu"
+  },
+  {
+   "codice": "SPE-CAR-SSN",
+   "etichetta": "Visita specialistica – branca cardiologica – ticket SSN",
+   "gruppo": "visita",
+   "branca": "CAR",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal cardiologo (il medico del cuore), hai pagato solo il ticket"
+  },
+  {
+   "codice": "SPE-CAR-CON",
+   "etichetta": "Visita specialistica – branca cardiologica – struttura convenzionata",
+   "gruppo": "visita",
+   "branca": "CAR",
+   "regime": "CON",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal cardiologo (il medico del cuore), in una struttura convenzionata"
+  },
+  {
+   "codice": "SPE-OCU-PRI",
+   "etichetta": "Visita specialistica – branca oculistica – regime privato",
+   "gruppo": "visita",
+   "branca": "OCU",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'oculista (il medico degli occhi), hai pagato tutto tu"
+  },
+  {
+   "codice": "SPE-OCU-SSN",
+   "etichetta": "Visita specialistica – branca oculistica – ticket SSN",
+   "gruppo": "visita",
+   "branca": "OCU",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'oculista (il medico degli occhi), hai pagato solo il ticket"
+  },
+  {
+   "codice": "SPE-OCU-CON",
+   "etichetta": "Visita specialistica – branca oculistica – struttura convenzionata",
+   "gruppo": "visita",
+   "branca": "OCU",
+   "regime": "CON",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'oculista (il medico degli occhi), in una struttura convenzionata"
+  },
+  {
+   "codice": "SPE-DER-PRI",
+   "etichetta": "Visita specialistica – branca dermatologica – regime privato",
+   "gruppo": "visita",
+   "branca": "DER",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal dermatologo (il medico della pelle), hai pagato tutto tu"
+  },
+  {
+   "codice": "SPE-DER-SSN",
+   "etichetta": "Visita specialistica – branca dermatologica – ticket SSN",
+   "gruppo": "visita",
+   "branca": "DER",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal dermatologo (il medico della pelle), hai pagato solo il ticket"
+  },
+  {
+   "codice": "SPE-DER-CON",
+   "etichetta": "Visita specialistica – branca dermatologica – struttura convenzionata",
+   "gruppo": "visita",
+   "branca": "DER",
+   "regime": "CON",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal dermatologo (il medico della pelle), in una struttura convenzionata"
+  },
+  {
+   "codice": "SPE-ORT-PRI",
+   "etichetta": "Visita specialistica – branca ortopedica – regime privato",
+   "gruppo": "visita",
+   "branca": "ORT",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'ortopedico (il medico di ossa e articolazioni), hai pagato tutto tu"
+  },
+  {
+   "codice": "SPE-ORT-SSN",
+   "etichetta": "Visita specialistica – branca ortopedica – ticket SSN",
+   "gruppo": "visita",
+   "branca": "ORT",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'ortopedico (il medico di ossa e articolazioni), hai pagato solo il ticket"
+  },
+  {
+   "codice": "SPE-ORT-CON",
+   "etichetta": "Visita specialistica – branca ortopedica – struttura convenzionata",
+   "gruppo": "visita",
+   "branca": "ORT",
+   "regime": "CON",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'ortopedico (il medico di ossa e articolazioni), in una struttura convenzionata"
+  },
+  {
+   "codice": "SPE-GIN-PRI",
+   "etichetta": "Visita specialistica – branca ginecologica – regime privato",
+   "gruppo": "visita",
+   "branca": "GIN",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal ginecologo (il medico della salute femminile), hai pagato tutto tu"
+  },
+  {
+   "codice": "SPE-GIN-SSN",
+   "etichetta": "Visita specialistica – branca ginecologica – ticket SSN",
+   "gruppo": "visita",
+   "branca": "GIN",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal ginecologo (il medico della salute femminile), hai pagato solo il ticket"
+  },
+  {
+   "codice": "SPE-GIN-CON",
+   "etichetta": "Visita specialistica – branca ginecologica – struttura convenzionata",
+   "gruppo": "visita",
+   "branca": "GIN",
+   "regime": "CON",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal ginecologo (il medico della salute femminile), in una struttura convenzionata"
+  },
+  {
+   "codice": "SPE-ORL-PRI",
+   "etichetta": "Visita specialistica – branca otorinolaringoiatrica – regime privato",
+   "gruppo": "visita",
+   "branca": "ORL",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'otorino (il medico di orecchie, naso e gola), hai pagato tutto tu"
+  },
+  {
+   "codice": "SPE-ORL-SSN",
+   "etichetta": "Visita specialistica – branca otorinolaringoiatrica – ticket SSN",
+   "gruppo": "visita",
+   "branca": "ORL",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'otorino (il medico di orecchie, naso e gola), hai pagato solo il ticket"
+  },
+  {
+   "codice": "SPE-ORL-CON",
+   "etichetta": "Visita specialistica – branca otorinolaringoiatrica – struttura convenzionata",
+   "gruppo": "visita",
+   "branca": "ORL",
+   "regime": "CON",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'otorino (il medico di orecchie, naso e gola), in una struttura convenzionata"
+  },
+  {
+   "codice": "SPE-NEU-PRI",
+   "etichetta": "Visita specialistica – branca neurologica – regime privato",
+   "gruppo": "visita",
+   "branca": "NEU",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal neurologo (il medico dei nervi), hai pagato tutto tu"
+  },
+  {
+   "codice": "SPE-NEU-SSN",
+   "etichetta": "Visita specialistica – branca neurologica – ticket SSN",
+   "gruppo": "visita",
+   "branca": "NEU",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal neurologo (il medico dei nervi), hai pagato solo il ticket"
+  },
+  {
+   "codice": "SPE-NEU-CON",
+   "etichetta": "Visita specialistica – branca neurologica – struttura convenzionata",
+   "gruppo": "visita",
+   "branca": "NEU",
+   "regime": "CON",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dal neurologo (il medico dei nervi), in una struttura convenzionata"
+  },
+  {
+   "codice": "SPE-URO-PRI",
+   "etichetta": "Visita specialistica – branca urologica – regime privato",
+   "gruppo": "visita",
+   "branca": "URO",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'urologo (il medico delle vie urinarie), hai pagato tutto tu"
+  },
+  {
+   "codice": "SPE-URO-SSN",
+   "etichetta": "Visita specialistica – branca urologica – ticket SSN",
+   "gruppo": "visita",
+   "branca": "URO",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'urologo (il medico delle vie urinarie), hai pagato solo il ticket"
+  },
+  {
+   "codice": "SPE-URO-CON",
+   "etichetta": "Visita specialistica – branca urologica – struttura convenzionata",
+   "gruppo": "visita",
+   "branca": "URO",
+   "regime": "CON",
+   "richiede_prescrizione": true,
+   "semplice": "Visita dall'urologo (il medico delle vie urinarie), in una struttura convenzionata"
+  },
+  {
+   "codice": "DIA-LAB-PRI",
+   "etichetta": "Diagnostica – Analisi di laboratorio – regime privato",
+   "gruppo": "esame",
+   "branca": "LAB",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Esami del sangue o delle urine, hai pagato tutto tu"
+  },
+  {
+   "codice": "DIA-LAB-SSN",
+   "etichetta": "Diagnostica – Analisi di laboratorio – ticket SSN",
+   "gruppo": "esame",
+   "branca": "LAB",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Esami del sangue o delle urine, hai pagato solo il ticket"
+  },
+  {
+   "codice": "DIA-ECO-PRI",
+   "etichetta": "Diagnostica – Ecografia – regime privato",
+   "gruppo": "esame",
+   "branca": "ECO",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Ecografia, hai pagato tutto tu"
+  },
+  {
+   "codice": "DIA-ECO-SSN",
+   "etichetta": "Diagnostica – Ecografia – ticket SSN",
+   "gruppo": "esame",
+   "branca": "ECO",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Ecografia, hai pagato solo il ticket"
+  },
+  {
+   "codice": "DIA-RXT-PRI",
+   "etichetta": "Diagnostica – Radiologia tradizionale – regime privato",
+   "gruppo": "esame",
+   "branca": "RXT",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Radiografia, hai pagato tutto tu"
+  },
+  {
+   "codice": "DIA-RXT-SSN",
+   "etichetta": "Diagnostica – Radiologia tradizionale – ticket SSN",
+   "gruppo": "esame",
+   "branca": "RXT",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Radiografia, hai pagato solo il ticket"
+  },
+  {
+   "codice": "DIA-RMN-PRI",
+   "etichetta": "Diagnostica – Risonanza magnetica – regime privato",
+   "gruppo": "esame",
+   "branca": "RMN",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Risonanza magnetica, hai pagato tutto tu"
+  },
+  {
+   "codice": "DIA-RMN-SSN",
+   "etichetta": "Diagnostica – Risonanza magnetica – ticket SSN",
+   "gruppo": "esame",
+   "branca": "RMN",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "Risonanza magnetica, hai pagato solo il ticket"
+  },
+  {
+   "codice": "DIA-TAC-PRI",
+   "etichetta": "Diagnostica – Tomografia computerizzata – regime privato",
+   "gruppo": "esame",
+   "branca": "TAC",
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "TAC, hai pagato tutto tu"
+  },
+  {
+   "codice": "DIA-TAC-SSN",
+   "etichetta": "Diagnostica – Tomografia computerizzata – ticket SSN",
+   "gruppo": "esame",
+   "branca": "TAC",
+   "regime": "SSN",
+   "richiede_prescrizione": true,
+   "semplice": "TAC, hai pagato solo il ticket"
+  },
+  {
+   "codice": "ODO-PRI",
+   "etichetta": "Prestazioni odontoiatriche – regime privato",
+   "gruppo": "dentista",
+   "branca": null,
+   "regime": "PRI",
+   "richiede_prescrizione": false,
+   "semplice": "Cure dal dentista, hai pagato tutto tu"
+  },
+  {
+   "codice": "FIS-PRI",
+   "etichetta": "Fisioterapia e riabilitazione – regime privato",
+   "gruppo": "fisioterapia",
+   "branca": null,
+   "regime": "PRI",
+   "richiede_prescrizione": true,
+   "semplice": "Fisioterapia, hai pagato tutto tu"
+  },
+  {
+   "codice": "LEN-ACQ",
+   "etichetta": "Acquisto lenti correttive",
+   "gruppo": "altro",
+   "branca": null,
+   "regime": null,
+   "richiede_prescrizione": false,
+   "semplice": "Occhiali o lenti a contatto"
+  },
+  {
+   "codice": "RIC-IND",
+   "etichetta": "Indennità giornaliera per ricovero",
+   "gruppo": "altro",
+   "branca": null,
+   "regime": null,
+   "richiede_prescrizione": false,
+   "semplice": "Giorni di ricovero in ospedale"
+  },
+  {
+   "codice": "PSO-TIC",
+   "etichetta": "Ticket pronto soccorso",
+   "gruppo": "altro",
+   "branca": null,
+   "regime": null,
+   "richiede_prescrizione": false,
+   "semplice": "Ticket del pronto soccorso"
+  },
+  {
+   "codice": "TRA-SAN",
+   "etichetta": "Trasporto sanitario",
+   "gruppo": "altro",
+   "branca": null,
+   "regime": null,
+   "richiede_prescrizione": false,
+   "semplice": "Ambulanza o trasporto sanitario"
+  }
+ ]
+}
